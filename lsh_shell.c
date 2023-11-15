@@ -9,7 +9,7 @@
 int main(int ac, char **av, char **env)
 {
 	int pValue = 0, stat = 0, is_p = 0;
-	char *line = NULL, /**ptr to inpt*/ **cmd = NULL; /**tokenized commands*/
+	char *line = NULL, /**ptr to inpt*/ **cmd = NULL; /**_token commands*/
 	(void)ac;
 	while (1)/* loop until exit */
 	{
