@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av, char **env)
 {
-	int pValue = 0, stat = 0, is_path = 0;
+	int pValue = 0, stat = 0, is_p = 0;
 	char *line = NULL, /**ptr to inpt*/ **cmd = NULL; /**tokenized commands*/
 	(void)ac;
 	while (1)/* loop until exit */
@@ -20,16 +20,16 @@ int main(int ac, char **av, char **env)
 		if (line)
 		{
 			pValue++;
-			cmd = tokenize(line);/** tokenizes or parse user input*/
+			cmd = _token(line);/** _token or parse user input*/
 			if (!cmd)
 				free(line);
-			if (!_strcmp(cmd[0], "env"))/**checks if user wrote env"*/
-				_getenv(env);
+			if (!strcmp(cmd[0], "env"))/**checks if user wrote env"*/
+			manipulate_env(env);
 			else
 			{
-				is_p = value_p(&cmd[0], env);/** tokenizes PATH*/
+				is_p = manipulate_path(&cmd[0], env);/** _token PATH*/
 				stat = _fork(cmd, av, env, line, pValue, is_p);
-					if (status == 200)
+					if (stat == 200)
 					{
 						free(line);
 						return (0);

@@ -10,7 +10,7 @@ char *retrive_path(char **env)
 	size_t ind = 0, var = 0, ct = 5;
 	char *p = NULL;
 
-	for (ind = 0; _strncmp(env[ind], "PATH=", 5); ind++)
+	for (ind = 0; strncmp(env[ind], "PATH=", 5); ind++)
 		;
 	if (env[ind] == NULL)
 		return (NULL);
@@ -23,7 +23,7 @@ char *retrive_path(char **env)
 		return (NULL);
 
 	for (var = 5, ct = 0; env[ind][var]; var++, ct++)
-		path[ct] = env[ind][var];
+		p[ct] = env[ind][var];
 
 	p[ct] = '\0';
 	return (p);

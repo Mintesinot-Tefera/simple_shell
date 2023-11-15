@@ -17,7 +17,7 @@ int handle_help(char **args);
 extern char **environ;
 int handle_exit(char **args);
 int comp_str(char *s1, char *s2);
-size_t comp_str(char *s1, char *s2, size_t n);
+size_t compa_str(char *s1, char *s2, size_t n);
 int str_length(char *s);
 char *copy_str(char *d, char *src);
 char *conc_str(char *d, char *src);
@@ -25,7 +25,7 @@ int _putchar(char c);
 
 char *retrive_path(char **env);
 int manipulate_path(char **arg, char **env);
-char *read_input(void);
+char *gline_cmd(void);
 void manipulate_env(char **env);
 char **_token(char *lptr);
 void exit_cmd(char **args, char *lptr, int _exit);

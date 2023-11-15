@@ -13,16 +13,16 @@ char *conc_str(char *dest, char *src)
 {
 	int i, j = 0;
 
-	for (i = 0; d[i] != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++)
 	{
 	}
 	for (j = 0; src[j] != '\0'; j++)
 	{
-		d[i] = src[j];
+		dest[i] = src[j];
 		i++;
 
 	}
-	d[i] = '\0';
-return (d);
+	dest[i] = '\0';
+return (dest);
 }
 

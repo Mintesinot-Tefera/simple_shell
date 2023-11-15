@@ -112,7 +112,7 @@ int _fork(char **arg, char **av, char **env, char *lptr, int np, int c)
 		return (1);
 	for (i = 0; i < num_built(); i++)
 	{
-		if (_strcmp(arg[0], b_str[i]) == 0)
+		if (strcmp(arg[0], b_str[i]) == 0)
 			return (b_fun[i](arg));
 	}
 	child = fork();
@@ -120,7 +120,7 @@ int _fork(char **arg, char **av, char **env, char *lptr, int np, int c)
 	{
 		if (execve(arg[0], arg, env) == -1)
 		{
-			fprintf(stderr, format, av[0], np, arg[0]);
+			fprintf(stderr, f, av[0], np, arg[0]);
 			if (!c)
 				free(arg[0]);
 			free(arg);

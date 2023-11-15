@@ -20,7 +20,7 @@ char **_token(char *lptr)
 		if (lptr[i] == ' ')
 			size++;
 	}
-	if ((size + 1) == _strlen(lptr))
+	if ((size + 1) == (int)strlen(lptr))
 		return (NULL);
 	user_cmd = malloc(sizeof(char *) * (size + 2));
 	if (user_cmd == NULL)
